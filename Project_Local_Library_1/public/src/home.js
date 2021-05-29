@@ -23,8 +23,10 @@ function getBooksBorrowedCount (books) {
 }
 
 function getMostCommonGenres (books) {
+  //map()
   let genres = books.map (book => book.genre);
   console.log (genres);
+  // reduce()
   let genreCount = genres.reduce ((total, genre) => {
     if (total[genre]) {
       total[genre]++;
@@ -64,6 +66,7 @@ function getMostPopularAuthors (books, authors) {
     if (match) {
       match.count += book.borrows.length;
     } else {
+      // helper function
       const writer = findAuthorById (authors, book.authorId);
       const count = book.borrows.length;
       bookAuthors.push ({
