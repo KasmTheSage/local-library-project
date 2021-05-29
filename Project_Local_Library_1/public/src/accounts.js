@@ -34,9 +34,11 @@ function getTotalNumberOfBorrows (account, books) {
 
 function getBooksPossessedByAccount (account, books, authors) {
   const id = account.id;
+  //filter()
   const booksUserHas = books.filter (
     book => !book.borrows[0].returned && book.borrows[0].id === id
   );
+  // helper function
   booksUserHas.forEach (book => {
     book.author = findAuthorById (authors, book.authorId);
   });
