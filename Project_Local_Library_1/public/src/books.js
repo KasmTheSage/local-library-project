@@ -1,4 +1,5 @@
 function findAuthorById (authors, id) {
+  // find()
   return authors.find (author => author.id === id);
 }
 
